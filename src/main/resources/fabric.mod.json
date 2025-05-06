@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "oneblockswimming",
+  "version": "${version}",
+  "name": "oneBlockSwimming",
+  "description": "Allow players to swim in one block of water",
+  "authors": ["S-N00B-1"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "mixins": [
+    "oneblockswimming.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": ">=${minecraft_version}"
+  }
+}
