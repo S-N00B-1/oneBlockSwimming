@@ -2,11 +2,16 @@
   "schemaVersion": 1,
   "id": "oneblockswimming",
   "version": "${version}",
-  "name": "oneBlockSwimming",
-  "description": "Allow players to swim in one block of water",
+  "name": "One Block Swimming",
+  "description": "A Server-side mod that allows players to start swimming in one block of water.",
   "authors": ["S-N00B-1"],
-  "contact": {},
+  "contact": {
+    "homepage": "https://modrinth.com/mod/oneBlockSwimming/",
+    "issues": "https://github.com/S-N00B-1/oneBlockSwimming/issues",
+    "sources": "https://github.com/S-N00B-1/oneBlockSwimming"
+  },
   "license": "MIT",
+  "icon": "assets/oneblockswimming/icon.png",
   "environment": "*",
   "mixins": [
     "oneblockswimming.mixins.json"
