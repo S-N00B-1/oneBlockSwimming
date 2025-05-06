@@ -16,7 +16,7 @@ public class ServerGamePacketListenerImplMixin {
     @Shadow
     public ServerPlayer player;
 
-    @Inject(method = "handlePlayerInput", at= @At(value = "INVOKE", target = "Lnet/minecraft/network/protocol/PacketUtils;ensureRunningOnSameThread(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketListener;Lnet/minecraft/server/level/ServerLevel;)V"))
+    @Inject(method = "handlePlayerInput", at= @At(value = "INVOKE", target = "Lnet/minecraft/network/protocol/PacketUtils;ensureRunningOnSameThread(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketListener;Lnet/minecraft/server/level/ServerLevel;)V", shift = At.Shift.AFTER))
     public void setSwimming(ServerboundPlayerInputPacket packet, CallbackInfo ci) {
         if (this.player.isInWater() && (packet.input().sprint() || this.player.isSprinting())) {
             this.player.setSwimming(true);
@@ -25,7 +25,7 @@ public class ServerGamePacketListenerImplMixin {
         }
     }
 
-    @Inject(method = "handleMovePlayer", at= @At(value = "INVOKE", target = "Lnet/minecraft/network/protocol/PacketUtils;ensureRunningOnSameThread(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketListener;Lnet/minecraft/server/level/ServerLevel;)V"))
+    @Inject(method = "handleMovePlayer", at= @At(value = "INVOKE", target = "Lnet/minecraft/network/protocol/PacketUtils;ensureRunningOnSameThread(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketListener;Lnet/minecraft/server/level/ServerLevel;)V", shift = At.Shift.AFTER))
     public void setSwimming(ServerboundMovePlayerPacket packet, CallbackInfo ci) {
         if (this.player.isInWater() && this.player.isSprinting()) {
             this.player.setSwimming(true);
